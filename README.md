@@ -1,2 +1,2 @@
 # BrodyHstuff.github.io
-A website
+A website that steals various elements from stack overflow.
