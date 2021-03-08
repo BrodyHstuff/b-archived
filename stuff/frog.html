@@ -1,0 +1,25 @@
+ <script src="ruffle.js"></script>
+<script type='text/javascript'>
+
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem('firstLoad') )
+    {
+      localStorage['firstLoad'] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem('firstLoad');
+  }
+})();
+
+</script>
+<body bgcolor="#000000"  text="#00ff00" link="#4cff4c" vlink="#0000ff" alink="#00ff00">
+  
+  <h1>RUN 1</h1>
+  
+  <embed src="frogger.swf" width="640" height="640"> </embed>
+  
+</body>
