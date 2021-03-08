@@ -1,3 +1,22 @@
+<script type='text/javascript'>
+
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem('firstLoad') )
+    {
+      localStorage['firstLoad'] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem('firstLoad');
+  }
+})();
+
+</script>
+<body bgcolor="#000000" background="bg_stars.gif" text="#ffffff" link="#ff4c4c" vlink="#0000ff" alink="#00ff00">
+
 <center><h1>Cat Film</h1>
   <video width="320" height="240" controls>
   <source src="catfilm.mp4" type="video/mp4">
