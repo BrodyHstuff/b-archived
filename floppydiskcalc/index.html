@@ -1,0 +1,17 @@
+<h3>Please enter the data size in megabytes:</h3>
+<form id="form" autocomplete="off" onsubmit="return false;">
+    <input  type="text" id="userInput" />
+    <input  type="submit" onclick="othername();" />
+    <h1 id="answer"> </h1>
+</form>
+
+<script>
+function othername() {
+    var input = document.getElementById("userInput").value;
+    var floppys = input / 1.44;
+    var roundedflop = (Math.ceil(floppys));
+    
+    
+    document.getElementById("answer").innerHTML = "You need " + (roundedflop) + " floppy disks!";
+}
+</script>
