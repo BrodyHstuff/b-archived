@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Starhum Abegeon</title>
+      <meta http-equiv = "refresh" content = "10; url = https://www.cpusa.org/" />
+   </head>
+   <body>
+   <center>
+<marquee direction="down" width="1000" height="480" behavior="alternate" style="border:solid">
+  <marquee behavior="alternate">
+    <h1>We will shortly redirect you to the COMMUNIST PARTY USA</h1>
+  </marquee>
+</marquee>
+<p><progress value="0" max="10" id="progressBar"></progress></p>
+</center>
+<script>
+var timeleft = 9;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+  }
+  document.getElementById("progressBar").value = 9 - timeleft;
+  timeleft -= 1;
+}, 1000);
+</script>
+   </body>
+</html>
