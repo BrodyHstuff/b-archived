@@ -20,8 +20,8 @@ var downloadTimer = setInterval(function(){
     clearInterval(downloadTimer);
   }
   document.getElementById("progressBar").value = 9 - timeleft;
-  timeleft -= 1;
-}, 1000);
+  timeleft -= 0.1;
+}, 100);
 </script>
    </body>
 </html>
