@@ -1,0 +1,26 @@
+!DOCTYPE html>
+<html>
+   <head>
+      <title>Loading</title>
+   </head>
+   <body>
+   <center>
+<marquee direction="down" width="1000" height="480" behavior="alternate" style="border:solid">
+  <marquee behavior="alternate">
+    <h1>Loading...</h1>
+  </marquee>
+</marquee>
+<p><progress value="0" max="10" id="progressBar"></progress></p>
+</center>
+<script>
+var timeleft = 8;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+  }
+  document.getElementById("progressBar").value = 8 - timeleft;
+  timeleft -= 1;
+}, 5000);
+</script>
+   </body>
+</html>
