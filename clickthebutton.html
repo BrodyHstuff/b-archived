@@ -1,13 +1,44 @@
+<!DOCTYPE html>
+<html style="font-family: 'Roboto', sans-serif;">
 <head>
-<title>Brody's Site</title>
+<title>Brody's Button Thing</title>
+	
+<style>
+body {
+  color: #222;
+  background: #fff;
+  font: 100% system-ui;
+}
+a {
+  color: #0033cc;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eee;
+    background: #121212;
+  }
+
+  body a {
+    color: #809fff;
+  }
+}
+	</style>
 
 </head>
 <script src="https://kihtrak.com/cloud_variable/cloudify.min.js"></script>
+
 <center>
+
+	
+	<h1>Brody's Button Thing</h1>
+	<p id="reset">You've reset the counter for everybody!</p>
+	
+	
 <button onclick="myFunction()">Click me</button>
 
 
-<h1 id="demo"></h1>
+<h3 id="demo">0</h3>
 <p>times pressed</h1>
 
 <script>
@@ -17,6 +48,7 @@ function myFunction() {
     cloud_views++
 	//if cloud_views has been set by another computer, cloud_views will automatically have that value
 	document.getElementById("demo").innerHTML = cloud_views;
+	document.getElementById("reset").innerHTML = " ";
 }
 </script>
 
