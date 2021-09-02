@@ -1,0 +1,24 @@
+<head>
+<title>Brody's Site</title>
+
+</head>
+<script src="https://kihtrak.com/cloud_variable/cloudify.min.js"></script>
+<center>
+<button onclick="myFunction()">Click me</button>
+
+
+<h1 id="demo"></h1>
+<p>times pressed</h1>
+
+<script>
+document.getElementById("demo").innerHTML = cloud_views;
+function myFunction() {
+    cloud_views++
+	//if cloud_views has been set by another computer, cloud_views will automatically have that value
+	document.getElementById("demo").innerHTML = cloud_views;
+}
+</script>
+
+
+
+
