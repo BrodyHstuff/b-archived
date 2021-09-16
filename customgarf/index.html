@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html style="font-family: 'Roboto', sans-serif;">
+<head>
+<title>Brody's GarfGen</title>
+	
+<style>
+body {
+  color: #222;
+  background: #fff;
+  font: 100% system-ui;
+}
+a {
+  color: #0033cc;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eee;
+    background: #121212;
+  }
+
+  body a {
+    color: #809fff;
+  }
+}
+
+li {
+  display: none;
+}
+	</style>
+
+</head>
+<body>
+<center>
+<h1>GarfGen</h1>
+
+<button type="submit" onclick="load()">Load</button>
+
+<a onClick="yesterday(); return false;" href="">
+	<p><small>Load Last Date--</small>
+</a>
+
+<a onClick="next(); return false;" href="">
+	<small>--Load Next Date</small></p>
+</a>
+
+<a onClick="myFunction(); return false;" href="">
+	<p><img id="myImg" src="https://picayune.uclick.com/comics/ga/1978/ga780619.gif" ></p>
+</a>
+
+
+<p id="date"></p>
+
+
+<form><p>
+<input type="number" id="months" value="6" min="1" max="12">
+<input type="number" id="days" value="19" min="1" max="31">
+<input type="number" id="years" value="1978">
+</p></form>
+
+
+
+<a onClick="getdatetoday(); return false;" href="">
+	<p><small>Load Today's Date</small></p>
+</a>
+
+
+
+
+
+
+
+
+</center>
+
+
+
+<p id="date2" hidden></p>
+
+<script type = 'text/javascript'>
+
+var datetoday = new Date();
+
+function getdatetoday() {
+  document.getElementById("months").value = datetoday.getMonth() + 1;
+  document.getElementById("days").value = datetoday.getDate();
+  document.getElementById("years").value = datetoday.getFullYear();
+  load()
+}
+
+
+
+
+
+function load() {
+  var month = document.getElementById("months").value;
+  var day = document.getElementById("days").value;
+  var year = document.getElementById("years").value;
+  
+  
+  if (10 > month) {
+      month = "0" + month
+  }
+  
+  if (10 > day) {
+      day = "0" + day
+  }
+  yearshrt = String(year).substring(2);
+  
+  var url = "https://picayune.uclick.com/comics/ga/" + year + "/ga" + yearshrt + month + day + ".gif"
+  var garf = "https://garfield.com/comic/" + year + "/" + month + "/" + day
+  var hqgarf = "https://the-eye.eu/public/Comics/Garfield/" + year + "-" + month + "-" + day + ".gif"
+  var garfdate = month + " " + day + " " + year
+  
+  
+  document.getElementById("myImg").src = url;
+  document.getElementById("date").innerHTML = garfdate;
+  document.getElementById("date2").innerHTML = hqgarf;
+
+}
+
+
+function myFunction() {
+  var hqgarf = document.getElementById("date2").innerHTML;
+  document.getElementById("myImg").src = hqgarf;
+}
+
+
+function yesterday() {
+  monthtxt = document.getElementById("months").value;
+  daytxt = document.getElementById("days").value;
+  yeartxt = document.getElementById("years").value;
+  
+  daytxt = daytxt - 1
+  
+  if (daytxt < 1) {
+    daytxt = 31;
+    monthtxt = monthtxt - 1;
+  }
+  
+  if (monthtxt < 1) {
+    monthtxt = 12;
+    yeartxt = yeartxt - 1;
+    daytxt = 31;
+  }
+  
+  
+  document.getElementById("days").value = daytxt
+  document.getElementById("months").value = monthtxt
+  document.getElementById("years").value = yeartxt
+  
+  load()
+}
+
+function next() {
+  monthtxt = document.getElementById("months").value;
+  daytxt = document.getElementById("days").value;
+  yeartxt = document.getElementById("years").value;
+  
+  daytxt = Number(daytxt)
+  monthtxt = Number(monthtxt)
+  yeartxt = Number(yeartxt)
+  
+  daytxt++
+  
+  if (daytxt > 31) {
+    daytxt = 1;
+    monthtxt = monthtxt + 1;
+  }
+  
+  if (monthtxt > 12) {
+    monthtxt = 1;
+    yeartxt = yeartxt + 1;
+    daytxt = 1;
+  }
+  
+  
+  document.getElementById("days").value = daytxt
+  document.getElementById("months").value = monthtxt
+  document.getElementById("years").value = yeartxt
+  
+  load()
+}
+
+
+</script>
