@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html style="font-family: 'Roboto', sans-serif;">
+<head>
+<title>Brody's GarfGen</title>
+	
+<style>
+body {
+  color: #222;
+  background: #fff;
+  font: 100% system-ui;
+}
+a {
+  color: #0033cc;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eee;
+    background: #121212;
+  }
+
+  body a {
+    color: #809fff;
+  }
+}
+
+
+	</style>
+
+</head>
+<body>
+<center>
+<h1>GarfGen</h1>
+<form action=".">
+    <input type="submit" value="Generate" />
+</form>
+<a onClick="myFunction(); return false;" href="">
+	<p><img id="myImg" src="http://images.ucomics.com/comics/ga/1978/ga780619.gif" ></p>
+</a>
+
+
+
+
+<p id="date"></p>
+
+
+
+
+<script type = 'text/javascript'>
+var year = Math.floor(Math.random()*45)+1978
+
+
+
+var month= Math.floor(Math.random()*12)+01
+if (10 > month) {
+    month = "0" + month
+}
+
+var day = Math.floor(Math.random()*31)+1
+if (10 > day) {
+    day = "0" + day
+}
+yearshrt = String(year).substring(2);
+
+
+
+
+var url = "https://picayune.uclick.com/comics/ga/" + year + "/ga" + yearshrt + month + day + ".gif"
+var garf = "https://garfield.com/comic/" + year + "/" + month + "/" + day
+var hqgarf = "https://the-eye.eu/public/Comics/Garfield/" + year + "-" + month + "-" + day + ".gif"
+var garfdate = month + " " + day + " " + year
+
+
+document.getElementById("myImg").src = url;
+document.getElementById("date").innerHTML = garfdate;
+
+function myFunction() {
+  document.getElementById("myImg").src = hqgarf;
+}
+
+</script>
+</center>
+
+
