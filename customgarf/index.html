@@ -64,7 +64,9 @@ li {
 	<p><small>Load Today's Date</small></p>
 </a>
 
-
+<p><small>
+<a href="" id="link"> </a>
+</small></p>
 
 
 
@@ -98,6 +100,18 @@ function loadurl() {
   load()
 }
 
+function share() {
+  document.getElementById("link").innerHTML = "Go To Shareable Link";
+  load()
+}
+
+function loadurl() {
+  document.getElementById("days").value = uday
+  document.getElementById("months").value = umonth
+  document.getElementById("years").value = uyear
+  load()
+}
+
 function getdatetoday() {
   document.getElementById("months").value = datetoday.getMonth() + 1;
   document.getElementById("days").value = datetoday.getDate();
@@ -115,7 +129,7 @@ function load() {
   var year = document.getElementById("years").value;
 
   var garfurl = "https://www.brodyh.net/customgarf?m=" + month + "&d=" + day + "&y=" + year
-  document.getElementById("date3").innerHTML = garfurl;
+  document.getElementById("link").href = garfurl;
   if (10 > month) {
       month = "0" + month
   }
@@ -136,6 +150,7 @@ function load() {
   document.getElementById("myImg").src = url;
   document.getElementById("date").innerHTML = garfdate;
   document.getElementById("date2").innerHTML = hqgarf;
+  
   
 }
 
