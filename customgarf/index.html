@@ -76,11 +76,27 @@ li {
 
 
 <p id="date2" hidden></p>
+<p id="date3" hidden></p>
 
 <script type = 'text/javascript'>
+const urlParams = new URLSearchParams(window.location.search);
+const umonth = urlParams.get('m');
+const uday = urlParams.get('d');
+const uyear = urlParams.get('y');
+if (uyear > 78) {
+     loadurl()
+}
+
 load()
 
 var datetoday = new Date();
+
+function loadurl() {
+  document.getElementById("days").value = uday
+  document.getElementById("months").value = umonth
+  document.getElementById("years").value = uyear
+  load()
+}
 
 function getdatetoday() {
   document.getElementById("months").value = datetoday.getMonth() + 1;
@@ -97,8 +113,9 @@ function load() {
   var month = document.getElementById("months").value;
   var day = document.getElementById("days").value;
   var year = document.getElementById("years").value;
-  
-  
+
+  var garfurl = "https://www.brodyh.net/customgarf?m=" + month + "&d=" + day + "&y=" + year
+  document.getElementById("date3").innerHTML = garfurl;
   if (10 > month) {
       month = "0" + month
   }
@@ -112,6 +129,8 @@ function load() {
   var garf = "https://garfield.com/comic/" + year + "/" + month + "/" + day
   var hqgarf = "https://the-eye.eu/public/Comics/Garfield/" + year + "-" + month + "-" + day + ".gif"
   var garfdate = month + " " + day + " " + year
+
+  
   
   
   document.getElementById("myImg").src = url;
