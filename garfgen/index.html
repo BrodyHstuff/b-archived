@@ -43,7 +43,9 @@ li {
 
 <p id="date"></p>
 
-
+<p><small>
+<a href="" id="link"> </a>
+</small></p>
 
 
 
@@ -64,12 +66,17 @@ load()
 
 var datetoday = new Date();
 
-function load() {
-var year = Math.floor(Math.random()*45)+1978
-var month= Math.floor(Math.random()*12)+01
-var day = Math.floor(Math.random()*31)+1
+function share() {
+  document.getElementById("link").innerHTML = "Go To Shareable Link";
+}
 
+function load() {
+  var year = Math.floor(Math.random()*45)+1978
+  var month= Math.floor(Math.random()*12)+01
+  var day = Math.floor(Math.random()*31)+1
   
+  var garfurl = "https://www.brodyh.net/customgarf?m=" + month + "&d=" + day + "&y=" + year
+  document.getElementById("link").href = garfurl;
   
   if (10 > month) {
       month = "0" + month
