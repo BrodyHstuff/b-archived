@@ -66,7 +66,7 @@ li {
 
 
 
-<p id="date2" hidden></p>
+<p id="date2" placeholder="" hidden></p>
 <p id="date3" hidden></p>
 
 <script type = 'text/javascript'>
@@ -132,13 +132,11 @@ function load() {
   var garf = "https://garfield.com/comic/" + year + "/" + month + "/" + day
   var hqgarf = "https://the-eye.eu/public/Comics/Garfield/" + year + "-" + month + "-" + day + ".gif"
   var garfdate = month + " " + day + " " + year
-
-  
   
   
   document.getElementById("myImg").src = url;
   document.getElementById("date").innerHTML = garfdate;
-  document.getElementById("date2").innerHTML = hqgarf;
+  document.getElementById("date2").placeholder = hqgarf;
   
   
 }
@@ -158,21 +156,19 @@ function tryjpg() {
   }
   yearshrt = String(year).substring(2);
   
-  var url = "https://picayune.uclick.com/comics/ga/" + year + "/ga" + yearshrt + month + day + ".jpg"
+  var url = "https://picayune.uclick.com/comics/ga/" + year + "/ga" + yearshrt + month + day + ".gif"
   var garf = "https://garfield.com/comic/" + year + "/" + month + "/" + day
   var hqgarf = "https://the-eye.eu/public/Comics/Garfield/" + year + "-" + month + "-" + day + ".gif"
   var garfdate = month + " " + day + " " + year
   
   
   document.getElementById("myImg").src = url;
-  document.getElementById("date").innerHTML = garfdate;
-  document.getElementById("date2").innerHTML = hqgarf;
   
 }
 
 
 function myFunction() {
-  var hqgarf = document.getElementById("date2").innerHTML;
+  var hqgarf = document.getElementById("date2").placeholder;
   document.getElementById("myImg").src = hqgarf;
 }
 
