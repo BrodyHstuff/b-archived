@@ -21,7 +21,7 @@ body a {
 
 <button type="submit" onclick="load()">Generate</button>
 
-<a onClick="myFunction(); return false;" href="">
+<a onClick="nothingf(); return false;" href="">
 	<p><img id="myImg" src="https://picayune.uclick.com/comics/ga/1978/ga780619.gif" onerror="tryjpg()"></p>
 </a>
 
@@ -50,6 +50,7 @@ body a {
 load()
 
 var datetoday = new Date();
+
 
 function share() {
   document.getElementById("link").innerHTML = "Go To Shareable Link";
@@ -116,6 +117,12 @@ function myFunction() {
   var hqgarf = document.getElementById("date2").placeholder;
   document.getElementById("myImg").src = hqgarf;
 }
+
+function nothingf() {
+  var hqgarf = document.getElementById("date2").placeholder;
+}
+
+
 
 
 </script>
