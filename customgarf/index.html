@@ -33,7 +33,7 @@ li {
 	<small>--Load Next Date</small></p>
 </a>
 
-<a onClick="myFunction(); return false;" href="">
+<a onClick="nothingf(); return false;" href="">
 	<p><img id="myImg" src="https://picayune.uclick.com/comics/ga/1978/ga780619.gif" onerror="tryjpg()"></p>
 </a>
 
@@ -173,8 +173,9 @@ function myFunction() {
   var hqgarf = document.getElementById("date2").placeholder;
   document.getElementById("myImg").src = hqgarf;
 }
-
-
+function nothingf() {
+  var hqgarf = document.getElementById("date2").placeholder;
+}	
 function yesterday() {
   monthtxt = document.getElementById("months").value;
   daytxt = document.getElementById("days").value;
