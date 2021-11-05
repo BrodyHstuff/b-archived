@@ -1,2 +1,6 @@
 DirectoryIndex index.php index.html index.htm
 ErrorDocument 404	/404.html
+AuthType Basic
+AuthName "restricted area"
+AuthUserFile /private/.htpasswd
+require valid-user
