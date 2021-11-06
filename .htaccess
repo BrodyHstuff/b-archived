@@ -1,2 +1,11 @@
+AuthUserFile /.htpasswd
+AuthType Basic
+AuthName "My Secret Page"
+
+<Files "page.html">
+  Require valid-user
+</Files>
+
+
 DirectoryIndex index.php index.html index.htm
 ErrorDocument 404	/404.html
