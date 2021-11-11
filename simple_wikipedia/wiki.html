@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple HTML Wikipedia</title>
+<body>
+<h1 id="title">Loading...</h1>
+<p id="demo">Please Wait</p>
+<script>
+
+
+
+const urlParams = new URLSearchParams(window.location.search);
+const title = urlParams.get('title');
+
+
+document.getElementById("title").innerHTML = title.replaceAll('_', ' ')
+
+
+
+//				Steve_Jobs
+let file = "https://en.wikipedia.org/w/api.php?action=parse&format=php&page=" + title + "&prop=text&origin=%2A"
+
+
+fetch(file, {mode: 'cors'})
+  .then(async function(response) {
+    //return response.text();
+	//x = response.text()
+	var out = await response.text()
+	const rplce = out.replaceAll('src="//', 'src="https://')
+	const vr2 = rplce.replaceAll('<span class="mw-editsection"', '<span hidden class="mw-editsection"')
+	//const vr3 = vr2.replaceAll('<a href="/wiki/', '<a href="https://en.wikipedia.org/wiki/')
+	const vr3 = vr2.replaceAll('<a href="/wiki/', '<a href="?title=')
+	
+	vr4 = vr3.substring(vr3.indexOf("<div") + 0);
+	
+	const vr5 = vr4.replaceAll('<a href="//', '<a href="https://')
+	
+	const vr6 = vr5.replaceAll('";}}}', ' ')
+	
+	
+	
+	// temp: const vr2 = rplce.replaceAll('', '')
+	
+	const done = vr6
+	
+	document.getElementById("demo").innerHTML = done
+  })
+
+
+
+//document.getElementById("demo").innerHTML = t
+
+
+</script>
+</body>
+</html>
