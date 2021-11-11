@@ -4,7 +4,7 @@
 <title>Simple HTML Wikipedia</title>
 <body>
 <h1 id="title">Loading...</h1>
-<p id="demo">Loading...</p>
+<p id="demo">Please Wait</p>
 <script>
 
 
@@ -37,11 +37,12 @@ fetch(file, {mode: 'cors'})
 	
 	const vr6 = vr5.replaceAll('";}}}', ' ')
 	
+	const vr7 = vr6.replaceAll('<a href="?title=File:', '<a href="https://en.wikipedia.org/wiki/File:')
 	
 	
 	// temp: const vr2 = rplce.replaceAll('', '')
 	
-	const done = vr6
+	const done = vr7
 	
 	document.getElementById("demo").innerHTML = done
   })
