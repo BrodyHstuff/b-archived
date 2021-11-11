@@ -1,0 +1,24 @@
+<html>
+<center>
+
+
+<h1>Simple HTML Wikipedia</h1>
+
+
+<input id="months" value="Wikipedia" placeholder="Search">
+
+
+
+<a onClick="load(); return false;" href="">
+	<p><small>Load</small></p>
+</a>
+</center>
+
+
+
+<script type = 'text/javascript'>
+function load() {
+  title = document.getElementById("months").value;
+  window.location.href = "wiki.html?title=" + title.replaceAll(' ', '_');
+}
+</script>
