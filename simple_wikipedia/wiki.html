@@ -5,6 +5,15 @@
 <body>
 <h1 id="title">Loading...</h1>
 <p id="demo">Please Wait</p>
+
+
+
+<center>
+
+<p><a id="link" href="https://en.wikipedia.org/wiki/">Go To Wikipedia Article</a></p>
+
+</center>
+
 <script>
 
 
@@ -15,6 +24,10 @@ const title = urlParams.get('title');
 
 document.getElementById("title").innerHTML = title.replaceAll('_', ' ')
 
+title2 = title.replaceAll('_', ' ')
+
+let href = "https://en.wikipedia.org/wiki/" + title2
+document.getElementById("link").href = href
 
 
 //				Steve_Jobs
