@@ -43,11 +43,11 @@ function load() {
 	 serialnum = document.getElementById("serial").value
 	 
 
-	 document.getElementById("info").innerHTML = window['cloud_'+serialnum];
+	 document.getElementById("info").innerHTML = window['cloud_wserial_'+serialnum];
 	 
 	 document.getElementById("notowned").setAttribute("hidden", "true");
 	 
-	 if (typeof window['cloud_'+serialnum] === 'undefined' || window['cloud_'+serialnum] === null) {
+	 if (typeof window['cloud_wserial_'+serialnum] === 'undefined' || window['cloud_wserial_'+serialnum] === null) {
 		 console.log("new serial");
 		 document.getElementById("notowned").removeAttribute("hidden");
 		 
@@ -55,7 +55,7 @@ function load() {
 }
 
 function varload() {
-	 window['cloud_'+serialnum] = document.getElementById("selfinfo").value
+	 window['cloud_wserial_'+serialnum] = document.getElementById("selfinfo").value
 	 load()
 }
 
