@@ -33,8 +33,17 @@ body {
 <script>
 function load() {
 	 document.getElementById("selfinfo").value = ""
-	 serialnum = document.getElementById("serial").value
+	 serialnum = Math.floor(document.getElementById("serial").value)
+	 	if (Number(serialnum) > Number(100)) {
+			var serialnum = 100
+		}
+		if (Number(serialnum) < Number(0)) {
+			var serialnum = 0
+		}
 	 
+	 
+	 document.getElementById("serial").value = serialnum 
+	
 
 	 document.getElementById("info").innerHTML = window['cloud_numbers_'+serialnum];
 	 
