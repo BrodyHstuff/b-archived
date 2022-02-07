@@ -1,0 +1,58 @@
+<html>
+<head>
+<script src="https://kihtrak.com/cloud_variable/cloudify.min.js"></script>
+<style>
+body {
+  font: 100% arial;
+}
+	</style>
+<title>Numbers</title>
+</head>
+<body>
+<center>
+<p><h1>Numbers</h1>
+
+<p><input type="number" id="serial" placeholder="Number" min="0" max="999999">
+<button type="submit" onclick="load()">Check</button>
+</p>
+
+<p><small>You may use the number however you want, including advertising.</small></p>
+
+<br>
+<p id="info"></p>
+
+
+<p hidden id="notowned">
+
+<input type="text" id="selfinfo" placeholder="Write something..." size="70" autocomplete="off">
+<button type="submit" onclick="varload()">Submit</button>
+
+</p>
+
+
+<script>
+function load() {
+	 document.getElementById("selfinfo").value = ""
+	 serialnum = document.getElementById("serial").value
+	 
+
+	 document.getElementById("info").innerHTML = window['cloud_numbers_'+serialnum];
+	 
+	 document.getElementById("notowned").setAttribute("hidden", "true");
+	 
+	 if (typeof window['cloud_numbers_'+serialnum] === 'undefined' || window['cloud_numbers_'+serialnum] === null) {
+		 console.log("new serial");
+		 document.getElementById("notowned").removeAttribute("hidden");
+		 
+	 }
+}
+
+function varload() {
+	 window['cloud_numbers_'+serialnum] = document.getElementById("selfinfo").value
+	 load()
+}
+
+
+
+</script>
+</body>
