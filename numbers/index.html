@@ -12,7 +12,7 @@ body {
 <center>
 <p><h1>Numbers</h1>
 
-<p><input type="number" id="serial" placeholder="Number" min="0" max="999999">
+<p><input type="number" id="serial" placeholder="Number" min="0" max="100">
 <button type="submit" onclick="load()">Check</button>
 </p>
 
@@ -34,17 +34,21 @@ body {
 function load() {
 	 document.getElementById("selfinfo").value = ""
 	 serialnum = Math.floor(document.getElementById("serial").value)
-	 	if (Number(serialnum) > Number(100)) {
-			var serialnum = 100
-		}
-		if (Number(serialnum) < Number(0)) {
-			var serialnum = 0
-		}
+	 
+	 if (serialnum > 100) {
+		serialnum = 100;
+		
+	 } else if (serialnum < 0) {
+		serialnum = 0;
+		
+	 }
+	 
+	 serialnum = Math.floor(serialnum)
+	 
+	 document.getElementById("serial").value = serialnum
 	 
 	 
-	 document.getElementById("serial").value = serialnum 
-	
-
+	 
 	 document.getElementById("info").innerHTML = window['cloud_numbers_'+serialnum];
 	 
 	 document.getElementById("notowned").setAttribute("hidden", "true");
@@ -60,6 +64,7 @@ function varload() {
 	 window['cloud_numbers_'+serialnum] = document.getElementById("selfinfo").value
 	 load()
 }
+
 
 
 
