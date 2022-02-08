@@ -12,7 +12,7 @@ body {
 <center>
 <p><h1>Numbers</h1>
 
-<p><input type="number" id="serial" placeholder="Number" min="0" max="100">
+<p><input type="number" id="serial" placeholder="Number" min="0" max="200">
 <button type="submit" onclick="load()">Check</button>
 </p>
 
@@ -35,8 +35,8 @@ function load() {
 	 document.getElementById("selfinfo").value = ""
 	 serialnum = Math.floor(document.getElementById("serial").value)
 	 
-	 if (serialnum > 100) {
-		serialnum = 100;
+	 if (serialnum > 200) {
+		serialnum = 200;
 		
 	 } else if (serialnum < 0) {
 		serialnum = 0;
