@@ -18,7 +18,7 @@ for (let i = 0; i < 1000; i++) {
 let text = "";
 
 for (let i = 0; i < 201; i++) {
-  text += i + ". " + (window['cloud_numbers_'+i]) + "<br>";
+  text += i + ". " + window['cloud_numbers_'+i] + "<br>";
 }
 
 document.getElementById("demo").innerHTML = text;
