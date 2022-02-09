@@ -21,6 +21,15 @@ let person = prompt("Please enter your name:", "");
 </script>
 
 <table style="width:75%">
+   <tr>
+    <td id="8">-----</td>
+  </tr>
+     <tr>
+    <td id="7">-----</td>
+  </tr>
+   <tr>
+    <td id="6">-----</td>
+  </tr>
  <tr>
     <td id="5">-----</td>
   </tr>
@@ -47,6 +56,10 @@ function update() {
 	 document.getElementById("3").innerHTML = cloud_three;
 	 document.getElementById("4").innerHTML = cloud_four;
 	 document.getElementById("5").innerHTML = cloud_five;
+	 document.getElementById("6").innerHTML = cloud_six;
+	 document.getElementById("7").innerHTML = cloud_seven;
+	 document.getElementById("8").innerHTML = cloud_eight;
+	 
 }
 
 </script>
@@ -81,7 +94,13 @@ function load() {
 	 cloud_three = document.getElementById("3").innerHTML;
 	 cloud_four = document.getElementById("4").innerHTML;
 	 cloud_five = document.getElementById("5").innerHTML;
+	 cloud_six = document.getElementById("6").innerHTML;
+	 cloud_seven = document.getElementById("7").innerHTML;
+	 cloud_eight = document.getElementById("8").innerHTML;
 	 
+	 cloud_eight = cloud_seven;
+	 cloud_seven = cloud_six;
+	 cloud_six = cloud_five;
 	 cloud_five = cloud_four;
 	 cloud_four = cloud_three;
 	 cloud_three = cloud_two;
@@ -93,5 +112,9 @@ function load() {
 	 document.getElementById("3").innerHTML = cloud_three;
 	 document.getElementById("4").innerHTML = cloud_four;
 	 document.getElementById("5").innerHTML = cloud_five;
+	 document.getElementById("6").innerHTML = cloud_six;
+	 document.getElementById("7").innerHTML = cloud_seven;
+	 document.getElementById("8").innerHTML = cloud_eight;
+	 
 }
 </script>
