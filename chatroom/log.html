@@ -1,0 +1,26 @@
+<html>
+<head>
+<script src="https://kihtrak.com/cloud_variable/cloudify.min.js"></script>
+<style>
+body {
+  font: 100% arial;
+}
+table, th, td {
+  border:1px solid black;
+}
+	</style>
+<title>chat(log)room.</title>
+</head>
+<body>
+
+<p id="log"> </p>
+
+<script>
+setInterval(update, 1000);
+
+function update() {
+  	 document.getElementById("log").innerHTML = cloud_chatlog;
+	 
+}
+
+</script>
