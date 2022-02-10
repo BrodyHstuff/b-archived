@@ -86,7 +86,6 @@ function load() {
      }
 	 
 
-	 
 	 document.getElementById("message").value = "";
 	 
 	 cloud_one = document.getElementById("1").innerHTML;
@@ -105,7 +104,10 @@ function load() {
 	 cloud_four = cloud_three;
 	 cloud_three = cloud_two;
 	 cloud_two = cloud_one;
-	 cloud_one = "<b>" + person + ": </b>" + message;
+	 var today = new Date();
+	 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+	 cloud_one = "<p style='color:blue;'><b style='color:red;'>" + person + ": </b>" + message + " ";
+	 cloud_one = cloud_one + "<i style='font-size:10px;color:#b8b8b8;'>" + time + "</i></p>"
 	 
 	 document.getElementById("1").innerHTML = cloud_one;
 	 document.getElementById("2").innerHTML = cloud_two;
