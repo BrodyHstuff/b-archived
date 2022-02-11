@@ -31,7 +31,7 @@ let person = prompt("Please enter your name:", "");
     <td id="6">-----</td>
   </tr>
  <tr>
-    <td id="5"><center>Loading...</center></td>
+    <td id="5">-----</td>
   </tr>
    <tr>
     <td id="4">-----</td>
@@ -48,9 +48,7 @@ let person = prompt("Please enter your name:", "");
 </table>
 
 <script>
-
 setInterval(update, 1000);
-
 
 function update() {
   	 document.getElementById("1").innerHTML = cloud_one;
@@ -68,6 +66,24 @@ function update() {
 <input type="text" id="message" placeholder="Message" size="70" autocomplete="off">
 <button type="submit" onclick="load()" id="coolbutton">Submit</button>
 
+<br>
+<br>
+<br>
+<br>
+<button type="submit" onclick="showcolor()">Change Name Color</button>
+<button type="submit" onclick="showimage()">Send Image</button>
+
+<p hidden id="colormenu">
+<input type="color" id="colorthing" value="#ff0000" style="width:10%;">
+<button type="submit" onclick="sendcolor()">Submit</button>
+</p>
+
+<p hidden id="imagemenu">
+<input id="inp" type='file'>
+<p id="b64"></p>
+</p>
+
+
 <script>
 
 var input = document.getElementById("message");
@@ -82,6 +98,8 @@ input.addEventListener("keyup", function(load) {
 
 function load() {
 	 message = document.getElementById("message").value;
+	 document.getElementById("colormenu").setAttribute("hidden", "true");
+	 document.getElementById("imagemenu").setAttribute("hidden", "true");
 	 
 	 if (message == "") {
 		 return
@@ -106,12 +124,12 @@ function load() {
 	 cloud_four = cloud_three;
 	 cloud_three = cloud_two;
 	 cloud_two = cloud_one;
+	 
+	 namecolor = document.getElementById("colorthing").value;
 	 var today = new Date();
 	 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-	 cloud_one = "<p style='color:blue;'><b style='color:red;'>" + person + ": </b>" + message + " ";
+	 cloud_one = "<p style='color:blue;'><b style='color:" + namecolor + ";'>" + person + ": </b>" + message + " ";
 	 cloud_one = cloud_one + "<i style='font-size:10px;color:#b8b8b8;'>" + time + "</i></p>"
-	 
-	 cloud_chatlog = cloud_chatlog + "<br>" + cloud_two;
 	 
 	 document.getElementById("1").innerHTML = cloud_one;
 	 document.getElementById("2").innerHTML = cloud_two;
@@ -123,4 +141,74 @@ function load() {
 	 document.getElementById("8").innerHTML = cloud_eight;
 	 
 }
+
+
+function showcolor() {
+	 document.getElementById("colormenu").removeAttribute("hidden");
+	 namecolor = document.getElementById("colorthing").value;
+}
+
+function showimage() {
+	 document.getElementById("imagemenu").removeAttribute("hidden");
+}
+
+function sendcolor() {
+	 document.getElementById("colormenu").setAttribute("hidden", "true");
+	 
+}
+
+function readFile() {
+  
+  if (this.files && this.files[0]) {
+    
+    var FR= new FileReader();
+    
+    FR.addEventListener("load", function(e) {
+      image = e.target.result;
+	  message = "<img height='200' src=" + image + "></img>"
+	  mycodesucks()
+    }); 
+    
+    FR.readAsDataURL( this.files[0] );
+  }
+  
+}
+
+function mycodesucks() {
+	 document.getElementById("imagemenu").setAttribute("hidden", "true");
+	 cloud_one = document.getElementById("1").innerHTML;
+	 cloud_two = document.getElementById("2").innerHTML;
+	 cloud_three = document.getElementById("3").innerHTML;
+	 cloud_four = document.getElementById("4").innerHTML;
+	 cloud_five = document.getElementById("5").innerHTML;
+	 cloud_six = document.getElementById("6").innerHTML;
+	 cloud_seven = document.getElementById("7").innerHTML;
+	 cloud_eight = document.getElementById("8").innerHTML;
+	 
+	 cloud_eight = cloud_seven;
+	 cloud_seven = cloud_six;
+	 cloud_six = cloud_five;
+	 cloud_five = cloud_four;
+	 cloud_four = cloud_three;
+	 cloud_three = cloud_two;
+	 cloud_two = cloud_one;
+	 
+	 namecolor = document.getElementById("colorthing").value;
+	 var today = new Date();
+	 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+	 cloud_one = "<p style='color:blue;'><b style='color:" + namecolor + ";'>" + person + ": </b>" + message + " ";
+	 cloud_one = cloud_one + "<i style='font-size:10px;color:#b8b8b8;'>" + time + "</i></p>"
+	 
+	 document.getElementById("1").innerHTML = cloud_one;
+	 document.getElementById("2").innerHTML = cloud_two;
+	 document.getElementById("3").innerHTML = cloud_three;
+	 document.getElementById("4").innerHTML = cloud_four;
+	 document.getElementById("5").innerHTML = cloud_five;
+	 document.getElementById("6").innerHTML = cloud_six;
+	 document.getElementById("7").innerHTML = cloud_seven;
+	 document.getElementById("8").innerHTML = cloud_eight;
+}
+
+document.getElementById("inp").addEventListener("change", readFile);
+
 </script>
