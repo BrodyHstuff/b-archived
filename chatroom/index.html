@@ -31,10 +31,10 @@ let person = prompt("Please enter your name:", "");
     <td id="6">-----</td>
   </tr>
  <tr>
-    <td id="5">-----</td>
+    <td id="5"><center>Loading...</center></td>
   </tr>
    <tr>
-    <td id="4">-----</td>
+    <td id="4"><center><small>If the chat has been loading for more than 15 seconds, revisit the chat later, or click the troubleshoot link at the bottom.</small></center></td>
   </tr>
   <tr>
     <td id="3">-----</td>
@@ -48,7 +48,7 @@ let person = prompt("Please enter your name:", "");
 </table>
 
 <script>
-setInterval(update, 1000);
+setInterval(update, 300);
 
 function update() {
   	 document.getElementById("1").innerHTML = cloud_one;
@@ -72,6 +72,9 @@ function update() {
 <br>
 <button type="submit" onclick="showcolor()">Change Name Color</button>
 <button type="submit" onclick="showimage()">Send Image</button>
+<br>
+<br>
+<i style='font-size:10px;color:#b8b8b8;'><a href="https://www.brodyh.net/chatroom/troubleshoot.html"><small>Troubleshooting</small></a></i>
 
 <p hidden id="colormenu">
 <input type="color" id="colorthing" value="#ff0000" style="width:10%;">
@@ -139,7 +142,7 @@ function load() {
 	 document.getElementById("6").innerHTML = cloud_six;
 	 document.getElementById("7").innerHTML = cloud_seven;
 	 document.getElementById("8").innerHTML = cloud_eight;
-	 cloud_chatlog = cloud_chatlog + "<br>" + cloud_two;
+	 cloud_chatlog = cloud_chatlog + "<br>" + cloud_two
 }
 
 
@@ -207,9 +210,7 @@ function mycodesucks() {
 	 document.getElementById("6").innerHTML = cloud_six;
 	 document.getElementById("7").innerHTML = cloud_seven;
 	 document.getElementById("8").innerHTML = cloud_eight;
-	 cloud_chatlog = cloud_chatlog + "<br>" + cloud_two;
 }
-
 document.getElementById("inp").addEventListener("change", readFile);
 
 </script>
