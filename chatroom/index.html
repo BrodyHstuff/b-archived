@@ -59,12 +59,16 @@ function update() {
 	 document.getElementById("6").innerHTML = cloud_six;
 	 document.getElementById("7").innerHTML = cloud_seven;
 	 document.getElementById("8").innerHTML = cloud_eight;
-	 
+	 if (typeof cloud_one !== 'undefined') {
+		 document.getElementById("coolbutton").removeAttribute("hidden");
+		 document.getElementById("message").removeAttribute("hidden");
+	 }
 }
 
 </script>
-<input type="text" id="message" placeholder="Message" size="70" autocomplete="off">
-<button type="submit" onclick="load()" id="coolbutton">Submit</button>
+
+<input hidden type="text" id="message" placeholder="Message" size="70" autocomplete="off">
+<button hidden type="submit" onclick="load()" id="coolbutton">Submit</button>
 
 <br>
 <br>
@@ -74,6 +78,7 @@ function update() {
 <button type="submit" onclick="showimage()">Send Image</button>
 <br>
 <br>
+
 <i style='font-size:10px;color:#b8b8b8;'><a href="https://www.brodyh.net/chatroom/troubleshoot.html"><small>Troubleshooting</small></a></i>
 
 <p hidden id="colormenu">
