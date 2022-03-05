@@ -14,13 +14,14 @@ table, th, td {
 <body>
 
 <p id="log"> </p>
+<p id="log_one"> </p>
 
 <script>
 setInterval(update, 1000);
 
 function update() {
   	 document.getElementById("log").innerHTML = cloud_chatlog;
-	 
+	 document.getElementById("log").innerHTML = cloud_one;
 }
 
 </script>
