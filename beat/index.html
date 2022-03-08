@@ -40,14 +40,11 @@ a = new sound(randomElement);
 a.play();
 
 decode = decodeURI(randomElement)
-decode2 = decode.slice(54);
+decode2 = decode.slice(30);
 
-decode3 = decode2.substring(decode2.indexOf("-") + 1);
-decode4 = decode3.substring(decode3.indexOf("-") + 1);
+decode3 = decode2.substring(decode2.indexOf("-") + 2);
 
-decode5 = decode4.slice(4);
-
-decode6 = decode5.slice(0, -4);
+decode6 = decode3.slice(0, -28);
 
 console.log(decode6)
 
