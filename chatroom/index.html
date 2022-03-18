@@ -20,7 +20,23 @@ table, th, td {
 
 
 let person = prompt("Please enter your name:", "");
+c = 1
 
+test = (person == "brody" || person == "Brody" || person == "brodyh.net" || person == "chatroom" || person == "admin" || person == "brody h." || person == "brody h" || person == "Brody H." || person == "Brody H" || person == "brody " || person == "brody  ");
+
+if (test == true) {
+	 var password = prompt("This name requires a password:", "");
+	 c = 0
+}
+
+if (password == "test") {
+	 console.log("correct")
+	 c = 1
+}
+else if (test == true && password != "test") {
+	 console.log("incorrect")
+	 location.reload();
+}
 var pastmessage = ""
 </script>
 
@@ -44,7 +60,7 @@ var pastmessage = ""
     <td id="3">-----</td>
   </tr>
   <tr>
-    <td id="2"><small>v-0.1</small></td>
+    <td id="2"><small>v-0.2</small></td>
   </tr>
   <tr>
     <td id="1">-----</td>
@@ -52,7 +68,7 @@ var pastmessage = ""
 </table>
 
 <script>
-setInterval(update, 300);
+setInterval(update, 200);
 
 function update() {
   	 document.getElementById("1").innerHTML = cloud_one;
