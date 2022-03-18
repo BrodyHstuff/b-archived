@@ -17,7 +17,11 @@ table, th, td {
 <small>a terrible html based chatroom</small>
 
 <script>
+
+
 let person = prompt("Please enter your name:", "");
+
+var pastmessage = ""
 </script>
 
 <table style="width:75%">
@@ -40,7 +44,7 @@ let person = prompt("Please enter your name:", "");
     <td id="3">-----</td>
   </tr>
   <tr>
-    <td id="2">-----</td>
+    <td id="2"><small>v-0.1</small></td>
   </tr>
   <tr>
     <td id="1">-----</td>
@@ -93,6 +97,14 @@ function update() {
 <p id="b64"></p>
 </p>
 
+<a hidden>
+really cool hidden menu
+
+<p id="pastmessage"></p>
+
+</a>
+
+
 
 <script>
 
@@ -110,12 +122,20 @@ function load() {
 	 message = document.getElementById("message").value;
 	 document.getElementById("colormenu").setAttribute("hidden", "true");
 	 document.getElementById("imagemenu").setAttribute("hidden", "true");
+	 pastmessage = document.getElementById("pastmessage").value;
 	 
+
 	 if (message == "") {
 		 return
      }
+	 if (message == pastmessage) {
+		 document.getElementById("message").value = "";
+		 alert("this is the spam filter");
+		 return
+     }
 	 
-
+	 document.getElementById("pastmessage").value = message;
+	 
 	 document.getElementById("message").value = "";
 	 
 	 cloud_one = document.getElementById("1").innerHTML;
