@@ -17,6 +17,7 @@ table, th, td {
 <small>a terrible html based chatroom</small>
 
 <script>
+
 let person = prompt("Please enter your name:", "");
 c = 1
 
@@ -58,7 +59,7 @@ var pastmessage = ""
     <td id="3">-----</td>
   </tr>
   <tr>
-    <td id="2"><small>v-0.3</small></td>
+    <td id="2"><small>v-0.3 (patch 1)</small></td>
   </tr>
   <tr>
     <td id="1">-----</td>
@@ -263,11 +264,11 @@ function linkify(inputText) {
 
     //URLs starting with http://, https://, or ftp://
     replacePattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
-    replacedText = inputText.replace(replacePattern1, '<a href="$1" target="_blank">$1</a>');
+    replacedText = inputText.replace(replacePattern1, '<a href="$1">$1</a>');
 
     //URLs starting with "www." (without // before it, or it'd re-link the ones done above).
     replacePattern2 = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    replacedText = replacedText.replace(replacePattern2, '$1<a href="http://$2" target="_blank">$2</a>');
+    replacedText = replacedText.replace(replacePattern2, '$1<a href="http://$2">$2</a>');
 
     //Change email addresses to mailto:: links.
     replacePattern3 = /(([a-zA-Z0-9\-\_\.])+@[a-zA-Z\_]+?(\.[a-zA-Z]{2,6})+)/gim;
