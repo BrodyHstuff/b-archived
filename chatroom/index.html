@@ -1,3 +1,4 @@
+
 <!--
 this code sucks but it kinda works so i'm keeping it.
 -->
@@ -21,21 +22,26 @@ table, th, td {
 
 <script>
 
-let person = prompt("Please enter your name:", "");
+let firstperson = prompt("Please enter your name:", "");
 c = 1
+trimmedperson = firstperson.trim();
+person = trimmedperson.toLowerCase();
+
 
 test = (person == "brody" || person == "Brody" || person == "brodyh.net" || person == "chatroom" || person == "admin" || person == "brody h." || person == "brody h" || person == "Brody H." || person == "Brody H" || person == "brody " || person == "brody  ");
 
 if (test == true) {
-	 var password = prompt("This name requires a password:", "");
+	 var dpassword = prompt("This name requires a password:", "");
 	 c = 0
 }
 
-if (password == "test") {
+password = btoa(dpassword) //HA NOW YOU CAN'T LOOK IN THE SOURCE CODE FOR THE PASSWORD
+
+if (password == "YmV0dGVyIHBhc3N3b3Jk") {
 	 console.log("correct")
 	 c = 1
 }
-else if (test == true && password != "test") {
+else if (test == true && password != "YmV0dGVyIHBhc3N3b3Jk") {
 	 console.log("incorrect")
 	 location.reload();
 }
