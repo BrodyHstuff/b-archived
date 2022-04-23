@@ -36,13 +36,13 @@ if (test == true) {
 	 c = 0
 }
 
-password = btoa(dpassword) //HA NOW YOU CAN'T LOOK IN THE SOURCE CODE FOR THE PASSWORD
+password = btoa(dpassword) //alright now the password is better
 
-if (password == "YmV0dGVyIHBhc3N3b3Jk") {
+if (password == "Z29vZ" + "CB" + String.fromCharCode(119) + "YXN" + String.fromCharCode(122) + "d29yZA" + "==") {
 	 console.log("correct")
 	 c = 1
 }
-else if (test == true && password != "YmV0dGVyIHBhc3N3b3Jk") {
+else if (test == true && password != "Z29vZ" + "CB" + String.fromCharCode(119) + "YXN" + String.fromCharCode(122) + "d29yZA" + "==") {
 	 console.log("incorrect")
 	 location.reload();
 }
