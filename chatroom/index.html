@@ -18,10 +18,21 @@ table, th, td {
 <body>
 <center>
 <h1>chatroom.</h1>
-<small>a terrible html based chatroom</small>
+<!--
+<small></small>
+-->
 
 <script>
-
+sent = 0
+function play() {
+	 if (sent == 1) {
+		 return
+     }
+    var audio = new Audio(
+'https://www.brodyh.net/chatroom/sound.mp3');
+    audio.play();
+}
+play()
 let firstperson = prompt("Please enter your name:", "");
 c = 1
 trimmedperson = firstperson.trim();
@@ -47,6 +58,8 @@ else if (test == true && password != "Z29vZ" + "CB" + String.fromCharCode(119) +
 	 location.reload();
 }
 var pastmessage = ""
+var pasttwo = ""
+
 </script>
 
 <table style="width:75%">
@@ -94,6 +107,11 @@ function update() {
 		 document.getElementById("sendcolor").removeAttribute("hidden");
 		 document.getElementById("sendimage").removeAttribute("hidden"); 
 	 }
+	 if (pasttwo !== cloud_two) {
+		 play()
+	 }
+	 
+	 pasttwo = cloud_two
 }
 
 </script>
@@ -305,9 +323,9 @@ function debugload() {
 	cloud_six = "-----"
 	cloud_seven = "-----"
 	cloud_eight = "-----"
-	cloud_chatlog = ""
 }
 
 document.getElementById("inp").addEventListener("change", readFile);
+
 
 </script>
