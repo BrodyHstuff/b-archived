@@ -165,8 +165,9 @@ function load() {
 	 document.getElementById("imagemenu").setAttribute("hidden", "true");
 	 pastmessage = document.getElementById("pastmessage").value;
 	 
-
-	 if (message == "") {
+	 
+	 if (person == "") {
+		 location.reload();
 		 return
      }
 	 if (message == pastmessage) {
@@ -258,6 +259,18 @@ function readFile() {
 function mycodesucks() {
 	 var sent = 1;
 	 setTimeout(() => {var sent = 0;}, "3000")
+	 
+	 
+	 if (person == "") {
+		 location.reload();
+		 return
+     }
+	 
+	 if (sent == 1) {
+		 document.getElementById("message").value = "";
+		 alert("this is the spam filter (reason 2)");
+		 return
+     }
 	 document.getElementById("imagemenu").setAttribute("hidden", "true");
 	 cloud_one = document.getElementById("1").innerHTML;
 	 cloud_two = document.getElementById("2").innerHTML;
