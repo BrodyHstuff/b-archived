@@ -257,7 +257,20 @@ function readFile() {
 }
 
 function mycodesucks() {
-	 
+	 if (message == pastmessage) {
+		 document.getElementById("message").value = "";
+		 alert("this is the spam filter (reason 1)");
+		 return
+         }
+	 if (sent == 1) {
+		 document.getElementById("message").value = "";
+		 alert("this is the spam filter (reason 2)");
+		 return
+         }
+	
+	
+	 sent = 1
+	 setTimeout(() => {sent = 0;}, "1500")
 	 
 	 if (person == "") {
 		 location.reload();
