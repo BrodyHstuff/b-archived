@@ -1,0 +1,65 @@
+<html>
+<head>
+<style>
+body {
+  font: 100% arial;
+}
+table, th, td {
+  border:1px solid black;
+}
+
+	</style>
+<title>base64.</title>
+</head>
+<body>
+<center>
+<p id="imagemenu">
+<input id="inp" type='file'>
+<input id="b64" placeholder="result"></input>
+</p>
+<p><a id="link3" href="">Generated Link</a></p>
+
+
+
+<script>
+
+function readFile() {
+  
+  if (this.files && this.files[0]) {
+    
+    var FR= new FileReader();
+    
+    FR.addEventListener("load", function(e) {
+      image = e.target.result;
+	  message = image
+	  mycodesucks()
+    }); 
+    
+    FR.readAsDataURL( this.files[0] );
+  }
+  
+}
+
+function mycodesucks() {
+	 document.getElementById("b64").value = message;
+	 document.getElementById("link3").href = message;
+	 myFunction()
+}
+
+document.getElementById("inp").addEventListener("change", readFile);
+
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("b64");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+   /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
+</script>
