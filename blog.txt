@@ -1,0 +1,7 @@
+here's a test.
+
+https://www.google.com
+
+if that test worked, that's cool.
+this link will automatically update every time i make a update to this text file.
+it's pretty cool i think
