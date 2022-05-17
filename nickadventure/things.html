@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>nick</title>
+<style>
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.bottom {
+  margin: 0;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+</style>
+</head>
+<body style="background-color:black;">
+<center>
+<h1 style="color:white;">welcome to adventure.brodyh.net</h1>
+<p id="demo" style="color:white;">time</p>
+<div class="center">
+<p style="color:grey;">
+JMNMBUG DB VKMX'A EKIMTX.<br>
+Vn ayh'dg cbtxoq bjsf. bjkg'a iybl.<br>
+oyfb robxno swtqrb vy fwnfr bjsf.<br>
+<br>
+-----<br>
+O.V.E.A : JA [____]<br>
+[znog 2, znzcqeirr 3, fmpdrveo 1&2]<br>
+<br>
+Na ooabkyamf lrnqbr, Vkmx qu dum<br>
+dofb ekg mxoe. vqlbla mnv donb <br>
+Psps.<br>
+<br>
+[rktm 6, rkeiibnxj 1, crvvoakg 1]<br>
+<br>
+Pbz dbrimpnav, Xvkm rna c xvkg<br>
+wrin, wnlg yhb qp zikxyg Ekg Nqyq,<br>
+ipn Gcpk.<br>
+<br>
+[ciio 6, citktzczu 1, agxgmpmr 3]<br>
+<br>
+Qh xvkm nbmu xbb iog pkc swqn, um<br>
+jeabu.<br>
+</p>
+</div>
+<a href="/nickadventure/page1.html"><div class="bottom" style="color:yellow;">next</div></a>
+</center>
+</body>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Mar 19, 2022 17:58:02").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = now - countDownDate;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var hours = Math.floor(distance / (1000 * 60 * 60 * 24) * 24);
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "nick";
+  }
+}, 1000);
+</script>
