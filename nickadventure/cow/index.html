@@ -1,0 +1,43 @@
+<html>
+<head>
+<a hidden>
+THIS IS A RECREATION. GO TO http://crypt.grotto.faith/
+</a>
+<style>
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+body {
+background-image: url(/nickadventure/cow/bg.gif);
+background-repeat: no-repeat;
+background-size: 100% 100%;
+}
+</style>
+<title>cow</title>
+</head>
+<audio src="/nickadventure/cow/cow.mp3" autoplay loop hidden></audio>
+<body>
+<div class="center">
+<center>
+	<p id="text"><br><p>
+	<br>
+	<br>
+	<p style="color:white;"><a id="cow1" href="#"><img id="cow2" onclick="cow()" src="/nickadventure/cow/cow.gif"></a></p>
+</center>
+</div>
+<script>
+function cow() {
+document.getElementById("text").innerHTML = "i have bypassed the curse of polarity"
+setTimeout(() => {document.getElementById("cow1").href = "/nickadventure/page0.html";}, "150") 
+}
+//"/nickadventure/page0.html
+</script>
+
+</body>
+</html>
