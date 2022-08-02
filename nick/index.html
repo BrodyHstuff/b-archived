@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Index</title>
+<style>
+a {color:blue;}
+a.directory {color:#3bb1ff;}
+</style>
+</head>
+<body>
+    <h2>Directory Listing of /</h2>
+    <hr>
+      <ul id="files" class="view-tiles"><li><a href="/20220317_211723.jpg" class="icon icon-jpg icon-image" title="20220317_211723.jpg"><span class="name">20220317_211723.jpg</span></a></li>
+<li><a href="/20220319_175800.jpg" class="icon icon-jpg icon-image" title="20220319_175800.jpg"><span class="name">20220319_175800.jpg</span></a></li>
+<li><a href="/20220319_175802.jpg" class="icon icon-jpg icon-image" title="20220319_175802.jpg"><span class="name">20220319_175802.jpg</span></a></li>
+<li><a href="/20220325_161134.jpg" class="icon icon-jpg icon-image" title="20220325_161134.jpg"><span class="name">20220325_161134.jpg</span></a></li>
+<li><a href="/20220325_1611470.jpg" class="icon icon-jpg icon-image" title="20220325_1611470.jpg"><span class="name">20220325_1611470.jpg</span></a></li>
+<li><a href="/20220327_1257130.jpg" class="icon icon-jpg icon-image" title="20220327_1257130.jpg"><span class="name">20220327_1257130.jpg</span></a></li>
+<li><a href="/20220406_132325.jpg" class="icon icon-jpg icon-image" title="20220406_132325.jpg"><span class="name">20220406_132325.jpg</span></a></li>
+<li><a href="/20220422_1453520.jpg" class="icon icon-jpg icon-image" title="20220422_1453520.jpg"><span class="name">20220422_1453520.jpg</span></a></li>
+<li><a href="/20220422_145403.jpg" class="icon icon-jpg icon-image" title="20220422_145403.jpg"><span class="name">20220422_145403.jpg</span></a></li>
+<li><a href="/20220425_171757.jpg" class="icon icon-jpg icon-image" title="20220425_171757.jpg"><span class="name">20220425_171757.jpg</span></a></li>
+<li><a href="/20220519_195342.jpg" class="icon icon-jpg icon-image" title="20220519_195342.jpg"><span class="name">20220519_195342.jpg</span></a></li>
+<li><a href="/nick.flac" class="icon icon-flac icon-default" title="nick.flac"><span class="name">nick.flac</span></a></li>
+<li><a href="/transperent.png" class="icon icon-png icon-image" title="transperent.png"><span class="name">transperent.png</span></a></li>
+<li><a href="/unknown_001.png" class="icon icon-png icon-image" title="unknown_001.png"><span class="name">unknown_001.png</span></a></li>
+<li><a href="/unknown_002.png" class="icon icon-png icon-image" title="unknown_002.png"><span class="name">unknown_002.png</span></a></li>
+<li><a href="/unknown_003.png" class="icon icon-png icon-image" title="unknown_003.png"><span class="name">unknown_003.png</span></a></li></ul>
+  </body>
+ <script>
+//index made by Brody H.
+const dirList = document.querySelectorAll(".directory .name");
+for (let i = 0; i < dirList.length; i++) {
+  currentdir = dirList[i].innerHTML
+  dirList[i].innerHTML = "/" + currentdir
+  currentdir = ""
+}
+
+const dirListr = document.querySelectorAll(".date");
+for (let i = 0; i < dirListr.length; i++) {
+  currentdir = dirListr[i].innerHTML
+  dirListr[i].innerHTML = "";
+  currentdir = ""
+}
+
+const dirListrr = document.querySelectorAll(".size");
+for (let i = 0; i < dirListrr.length; i++) {
+  currentdir = dirListrr[i].innerHTML
+  dirListrr[i].innerHTML = "";
+  currentdir = ""
+}
+</script>
+</html>
+
+
