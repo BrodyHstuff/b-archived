@@ -13,7 +13,6 @@
 </center>
 
 <script>
-var x = document.getElementById("audiop")
 const urlParams = new URLSearchParams(window.location.search);
 const title = urlParams.get('L');
 document.getElementById("audiol").value = title
@@ -22,7 +21,6 @@ load()
 function load() {
 	const audio1ink = document.getElementById("audiol").value;
 	document.getElementById("audiop").src = audio1ink
-	x.play()
 }
 
 
