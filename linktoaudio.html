@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,17 +5,24 @@
 <body>
 
 <center>
-<audio id="audiop" src="" controls></audio>
+<audio id="audiop" src="" controls autoplay></audio>
 <br>
 <input id="audiol" value="" placeholder="link">
-<button type="button" onclick="load()">Audio</button></p>
+<button type="button" onclick="load()">Load Audio</button></p>
 
 </center>
 
 <script>
+var x = document.getElementById("audiop")
+const urlParams = new URLSearchParams(window.location.search);
+const title = urlParams.get('L');
+document.getElementById("audiol").value = title
+load()
+
 function load() {
 	const audio1ink = document.getElementById("audiol").value;
 	document.getElementById("audiop").src = audio1ink
+	x.play()
 }
 
 
